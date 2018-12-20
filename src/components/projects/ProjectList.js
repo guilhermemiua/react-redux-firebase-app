@@ -1,18 +1,15 @@
 import React from "react";
 import ProjectSummary from "./ProjectSummary";
 
-const ProjectList = props => {
-  const { projects } = props;
-
-  const projectList = projects.length ? (
-    projects.map(project => {
-      return <ProjectSummary project={project} key={project.id} />;
-    })
-  ) : (
-    <p> No projects yet </p>
+const ProjectList = ({ projects }) => {
+  return (
+    <div className="project-list section">
+      {projects &&
+        projects.map(project => {
+          return <ProjectSummary project={project} key={project.id} />;
+        })}
+    </div>
   );
-
-  return <div className="project-list section">{projectList}</div>;
 };
 
 export default ProjectList;

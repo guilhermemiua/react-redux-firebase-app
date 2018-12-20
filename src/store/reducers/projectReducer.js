@@ -10,6 +10,9 @@ const projectReducer = (state = initState, action) => {
   if (action.type === "CREATE_PROJECT") {
     console.log("Created project: ", action.project);
   }
+  if (action.type === "CREATE_PROJECT_ERROR") {
+    console.log("Created project: ", action.console.error);
+  }
   return state;
 };
 
